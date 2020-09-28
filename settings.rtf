@@ -1,0 +1,52 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2511
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 \
+i) Input/Output format for mappers/reducers:\
+\
+Hadoop Task 1. Mapper1:\
+\
+   Input: key ~ LongWritable, value ~ Text\
+   Output: key ~ AdjacentWord, value ~ IntWritable\
+\
+Hadoop Task 2. Reducer1:\
+\
+   Input: key ~ AdjacentWord, value ~ IntWritable\
+   Output: key ~ AdjacentWord, value ~ DoubleWritalbe\
+\
+Hadoop Task 3. Mapper2:\
+\
+   Input: key ~ Object, value ~ Text\
+   Output: key ~ DoubleWritable, value ~ AdjacentWord\
+\
+Hadoop Task 4. Reducer2:\
+\
+   Input: key ~ DoubleWritable, value ~ AdjacentWord\
+   Output: key ~ AdjacentWord, value ~ DoubleWritable   \
+\
+\
+ii) Hadoop cluster settings:\
+\
+#For both Fully Distributed and Pseudo-Distributed modes\
+1. Number of VM instances : 2 (1 Namenode + 1 Datanode)  #For Fully Distributed Mode\
+2. VM type: Ubuntu, t2.medium, 4GB RAM\
+3. Number of Input splits (map tasks) for Job1 : 1\
+4. Number of reduce tasks for Job1 : 3\
+5. Number of Input splits (map tasks) for Job2 : 3 \
+6. Number of reduce tasks for Job2 : 1\
+\
+\
+iii) Running Time:\
+\
+a) Pseudo-Distributed Mode:\
+\
+  Running time: 10 minutes, 25 seconds\
+\
+b) Fully Distributed Mode:\
+\
+  Running time: 10 minutes, 25 seconds\
+}
